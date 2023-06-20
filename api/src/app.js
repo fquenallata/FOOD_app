@@ -1,11 +1,13 @@
 const express = require("express");
 const morgan = require("morgan");
-const routes = require("./routes/index.js");
+const allRoutes = require("./routes/index.js");
 const server = express();
 
 server.name = "API";
 
-server.use("/", routes);
+//urlencode para formularios? const urlencode = express.urlencode({extended: false})
+server.use(express.json());
+
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Credentials", "true");
@@ -16,6 +18,8 @@ server.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
+
+server.use("/", allRoutes);
 server.use(morgan("dev"));
 
 module.exports = server;
