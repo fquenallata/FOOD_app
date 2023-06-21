@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { getDiets, postDiets } = require("../controllers/diets.js");
+const { getDiets } = require("../controllers");
 
 router.get("/", getDiets);
-router.post("/", postDiets);
 
 module.exports = router;
