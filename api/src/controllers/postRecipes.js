@@ -22,8 +22,3 @@ const postRecipes = async (req, res) => {
   }
 };
 module.exports = postRecipes;
-/*
-Banco ciudad
-Raul280491
-raul1508
-*/

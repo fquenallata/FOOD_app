@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const allRoutes = require("./routes/index.js");
+const allRoutes = require("./routes"); ///index.js
 const server = express();
 
 server.name = "API";
