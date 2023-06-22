@@ -1,6 +1,5 @@
 const axios = require("axios");
 const { Recipe, Diets } = require("../db.js");
-const URL = "http://localhost:8080/recipes/:id/information";
 
 //retorna un  json con "title","image","types of diets"(esta de la tabla intermedia),"summary","healthScore", "instructions"
 const getRecipeById = async (req, res) => {
