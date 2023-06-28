@@ -24,9 +24,6 @@ const getRecipeById = async (req, res) => {
     ],
   });
   if (recipe.length) {
-    //cambio atributos "Diets" por "diets" y modifico un poco sus valores
-    //hago esto para evitar escribir recipe[0].dataValues varias veces
-    //en mi anterior version de abajo esta mejor explicado
     recipe = recipe[0].toJSON();
     const diets = recipe.Diets.map((diet) => diet.name);
     delete recipe.Diets;

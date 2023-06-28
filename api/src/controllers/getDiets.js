@@ -5,16 +5,14 @@ const URL =
 
 const getDiets = async (req, res) => {
   try {
-    const dietsFromDB = await Diets.findAll();
-    if (dietsFromDB.length) {
-      res.status(200).json(dietsFromDB);
+    const dietsFromBD = await Diets.findAll();
+    if (dietsFromBD.length) {
+      res.status(200).json(dietsFromBD);
     } else {
       const allDietsFromApi = await getDietsFromApi();
-      //preparo para el create bulk
       let diets = allDietsFromApi.map((diet) => {
         return { name: diet };
       });
-      //[{ name: diet }, ...]
       diets = await Diets.bulkCreate(diets);
       res.status(200).json(diets);
     }
