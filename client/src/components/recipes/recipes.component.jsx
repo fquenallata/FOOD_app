@@ -1,9 +1,20 @@
-function Home() {
+import Recipe from "../Recipe/Recipe.component.jsx";
+import styles from "./Recipes.module.css";
+
+function Recipes() {
   return (
-    <div>
-      <p>Estas en el Home</p>
+    <div className={styles.recipeList}>
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
     </div>
   );
 }
 
-export default Home;
+export default Recipes;

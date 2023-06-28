@@ -1,9 +1,10 @@
-function Home() {
+import styles from "./Recipe.module.css";
+function Recipe() {
   return (
-    <div>
+    <div className={styles.recipeContainer}>
       <p>Esta es una Receta</p>
     </div>
   );
 }
 
-export default Home;
+export default Recipe;
