@@ -24,10 +24,11 @@ const getRecipeById = async (req, res) => {
     ],
   });
   if (recipe.length) {
-    recipe = recipe[0].toJSON();
-    const diets = recipe.Diets.map((diet) => diet.name);
-    delete recipe.Diets;
-    recipe.diets = diets;
+    const { Diets, ...recipePropertys } = recipe[0].toJSON();
+    recipe = {
+      ...recipePropertys,
+      diets: Diets.map((diet) => diet.name),
+    };
     res.status(200).json(recipe);
   } else {
     try {
