@@ -2,22 +2,34 @@ import NavBar from "../../components/NavBar/NavBar.component.jsx";
 import Recipes from "../../components/Recipes/Recipes.component.jsx";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getRecipes } from "../../redux/actions/actions.js";
+import { getRecipes, getRecipesByName } from "../../redux/actions/actions.js";
 
 function Home() {
   const dispatch = useDispatch();
   const allRecipes = useSelector((state) => state.allRecipes);
-  // const [filteredRecipes, setfilteredRecipes] = useState(allRecipes);
-  // const [searchString, setSearchString] = useState("");
+  const [searchString, setSearchString] = useState("");
 
-  // const handleChange = (e) => {
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchString(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(getRecipesByName(searchString));
+  };
+
+  // const originFilterHandler = (e) => {
   //   e.preventDefault();
-  //   searchString = e.target.value;
+  //   const filtered = allRecipes.filter(
+  //     (recipe) => recipe.recipeFrom === e.target.value
+  //   );
+  //   setFilteredRecipes(filtered);
   // };
 
-  // const handleSubmit = (e) => {
-  //   const filtered = allRecipes.filter();
-  // };
+  // useEffect(() => {
+  //   setFilteredRecipes(allRecipes);
+  // }, [allRecipes]);
 
   useEffect(() => {
     dispatch(getRecipes());
@@ -26,7 +38,7 @@ function Home() {
   return (
     <div>
       <p>Estas en el Home</p>
-      <NavBar />
+      <NavBar handleChange={handleChange} handleSubmit={handleSubmit} />
       <Recipes allRecipes={allRecipes} />
     </div>
   );

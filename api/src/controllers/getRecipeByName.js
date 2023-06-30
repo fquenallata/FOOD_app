@@ -36,6 +36,7 @@ const getRecipeByName = async (req, res) => {
         return {
           ...recipePropertys,
           diets: Diets.map((diet) => diet.name),
+          recipeFrom: "BD",
         };
       });
     }
@@ -64,6 +65,7 @@ const getRecipeByName = async (req, res) => {
         healthScore: recipe.healthScore,
         instructions: instructions.join(" "),
         diets: recipe.diets,
+        recipeFrom: "Api",
       };
     });
 
