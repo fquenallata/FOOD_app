@@ -8,7 +8,7 @@ const {
 } = require("../controllers");
 
 router.post("/", postRecipes);
-router.get("/search", getRecipeByName);
+router.get("/", getRecipeByName);
 router.get("/:idRecipe", getRecipeById);
 
 module.exports = router;

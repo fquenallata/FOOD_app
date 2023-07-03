@@ -5,7 +5,7 @@ const { API_KEY } = process.env;
 
 const getRecipeByName = async (req, res) => {
   let { name } = req.query;
-  name = name.toLowerCase();
+
   try {
     let recipes = await Recipe.findAll({
       attributes: [
@@ -18,7 +18,7 @@ const getRecipeByName = async (req, res) => {
       ],
       where: {
         title: {
-          [Op.like]: `%${name}%`,
+          [Op.iLike]: `%${name}%`,
         },
       },
       include: [

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-
 import styles from "./Recipe.module.css";
+
 function Recipe(props) {
   //me falta diets
   const { title, image, healthScore, id } = props.recipe;
+
   return (
     <div className={styles.recipeContainer}>
       <h2>{title}</h2>
