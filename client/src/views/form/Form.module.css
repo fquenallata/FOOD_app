@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("../../../public/createbg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 110vh;
+  color: white;
 }
 
 .postContainer {
@@ -9,9 +13,9 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-color: rgb(0, 0, 0, 0.1);
+  background-color: rgb(0, 0, 0, 0.7);
   padding: 10px;
-  border: 1px solid rgba(60, 60, 60, 0.561);
+  border: 1px solid rgba(255, 255, 255, 0.561);
 }
 
 .textInputs {
@@ -73,6 +77,6 @@
 }
 
 span {
-  color: #a94442;
+  color: #ff0400;
   font-size: 0.6rem;
 }
