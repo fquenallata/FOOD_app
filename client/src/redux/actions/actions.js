@@ -3,6 +3,8 @@ import {
   GET_RECIPES_BY_NAME,
   GET_RECIPE_BY_ID,
   POST_RECIPE,
+  GET_DIETS,
+  RESET_RECIPE,
 } from "./types.js";
 import axios from "axios";
 
@@ -12,6 +14,25 @@ export function getRecipes() {
     return dispatch({
       type: GET_RECIPES,
       payload: data,
+    });
+  };
+}
+
+export function getDiets() {
+  return async function (dispatch) {
+    const { data } = await axios.get("http://localhost:3001/diets");
+    return dispatch({
+      type: GET_DIETS,
+      payload: data,
+    });
+  };
+}
+
+export function resetRecipes(allRecipesCopy) {
+  return async function (dispatch) {
+    return dispatch({
+      type: RESET_RECIPE,
+      payload: allRecipesCopy,
     });
   };
 }

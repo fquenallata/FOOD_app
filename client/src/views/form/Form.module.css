@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   background-image: url("../../../public/createbg.jpg");
-  background-repeat: no-repeat;
   background-size: 100% 110vh;
+  background-attachment: fixed;
   color: white;
 }
 

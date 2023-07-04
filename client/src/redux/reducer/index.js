@@ -3,13 +3,27 @@ import {
   GET_RECIPES_BY_NAME,
   GET_RECIPE_BY_ID,
   POST_RECIPE,
+  GET_DIETS,
+  RESET_RECIPE,
 } from "../actions/types.js";
 
-let initialState = { allRecipes: [], allRecipesCopy: [], posts: [] };
+let initialState = { allRecipes: [], allRecipesCopy: [], diets: [], posts: [] };
 
 function rootReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
+    case GET_DIETS:
+      return {
+        ...state,
+        diets: payload,
+      };
+
+    case RESET_RECIPE:
+      return {
+        ...state,
+        allRecipes: payload,
+      };
+
     case GET_RECIPES:
       return {
         ...state,

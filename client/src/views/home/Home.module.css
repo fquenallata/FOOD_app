@@ -1,0 +1,7 @@
+.homeContainer {
+  background-image: url("../../../public/homebg.jpg");
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  height: 220vh;
+}

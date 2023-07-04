@@ -124,8 +124,6 @@ function Form() {
     navigate("/home");
   };
 
-  console.log(input);
-
   return (
     <div className={styles.formContainer}>
       <form onSubmit={handleSubmit} className={styles.postContainer}>

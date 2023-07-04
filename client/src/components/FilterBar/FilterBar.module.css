@@ -3,5 +3,12 @@
   justify-content: space-around;
 
   padding: 5px;
-  background-color: rgb(255, 253, 122);
+  background-color: rgba(79, 79, 79, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.561);
+}
+
+.select {
+  pointer-events: none;
+  opacity: 0.3;
+  cursor: not-allowed;
 }
