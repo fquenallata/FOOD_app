@@ -42,7 +42,7 @@ const getRecipeByName = async (req, res) => {
     }
 
     const { data } = await axios.get(
-      `http://localhost:8080/recipes/complexSearch?addRecipeInformation=true&number=100&apiKey=${API_KEY}`
+      `https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=100&apiKey=${API_KEY}`
     );
     const allRecipes = data.results;
     let recipesFiltered = allRecipes.filter((recipe) =>

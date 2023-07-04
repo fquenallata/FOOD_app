@@ -36,7 +36,7 @@ const getRecipeById = async (req, res) => {
   } else {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/recipes/${idRecipe}/information?apiKey=${API_KEY}`
+        `https://api.spoonacular.com/recipes/${idRecipe}/information?apiKey=${API_KEY}`
       );
       const recipeFiltered = [
         {
